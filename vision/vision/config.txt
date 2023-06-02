@@ -1,0 +1,10 @@
+hmin = 135
+smin = 000
+vmin = 079
+hmax = 172
+smax = 255
+vmax = 139
+blur = 5
+min_size = 10
+max_size = 40
+

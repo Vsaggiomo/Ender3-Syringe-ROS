@@ -1,0 +1,15 @@
+; This code is used to setup the pumps in each python script
+; You can manually edit this, but some settings (like M92) are overwritten later
+; 31-8-2021 - Bart Grosman
+;
+; Setup code from Vittorio
+M201 X500.00 Y500.00 Z500.00 ;Setup machine max acceleration
+M203 X10.0 Y10.0 Z10.00 E50.00 ;Setup machine max feedrate, == speed limit in mm/s
+M204 T500.00 ;Setup Travel acceleration, no print or retract since we are not extruding anything
+M205 X0.40 Y0.40 Z0.40 E5.00 ;Setup Jerk, jerk is the minimum speed that the motors move
+; This is the most important setting to tune, it defines how many stepper motor steps equate to 1 mm of syringe movement
+M92 X-4000 Y-4000 Z4000 ; 4000 steps per mm, as measured by Vittorio
+M302 S0 ; print with cold hotend -- This allows cold extrusion, but we aren't doing any, maybe when we use the stepper motor of the extruder too
+M121 ; don't use endstops
+G91 ; relative positioning
+"""
